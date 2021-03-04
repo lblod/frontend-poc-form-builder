@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('forms', function() {
     this.route('playground');
   });
+  this.route('codelijsten');
 });
