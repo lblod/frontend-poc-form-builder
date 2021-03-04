@@ -1,15 +1,25 @@
-<!--TODO MIET DO YOUR MAGIC-->
-<AuLabel for="textarea-regular">Configuration</AuLabel>
-<AuTextarea id="textarea-regular" @width="block" @value={{this.spec}} onblur={{this.refresh}} rows="25"/>
-<div class="au-o-box">
+<div class="playground__edit">
+  <div class="playground__edit__header">
+    <AuHeading @level="2" @skin="4" class="au-u-margin-bottom-small">
+      Stap 2: Vul placeholders in 
+    </AuHeading>
+    <p class="au-u-margin-bottom-small">Voeg labels (name) en helpteksten (description) toe, en klik op “genereer formulier” om het te bekijken.</p>
+  </div>
+  <AuTextarea id="textarea-regular" @width="block" @value={{this.spec}} onblur={{this.refresh}} class="playground__edit__editor"/>
+</div>
+<div class="playground__show">
+  <AuHeading @level="2" @skin="4" class="au-u-margin-bottom-small">
+    Stap 3: Exporteer template
+  </AuHeading>
+  <p class="au-u-margin-bottom-small">Eens je tevreden bent van het formulier kan de template geëxporteerd worden voor development.</p>
   {{#unless this.refreshing}}
     <RdfForm
-            @groupClass="au-o-grid__item au-u-1-1 au-u-1-2@medium"
-            @form={{this.form}}
-            @graphs={{this.graphs}}
-            @sourceNode={{this.node}}
-            @formStore={{this.store}}
-            @show={{false}}
-            @forceShowErrors={{false}} />
+      @groupClass="au-o-grid__item au-u-1-1"
+      @form={{this.form}}
+      @graphs={{this.graphs}}
+      @sourceNode={{this.node}}
+      @formStore={{this.store}}
+      @show={{false}}
+      @forceShowErrors={{false}} />
   {{/unless}}
 </div>
